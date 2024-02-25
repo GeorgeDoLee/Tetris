@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import { buildBoard, nextBoard } from "../utilities/Board";
 
 export const useBoard = ({
