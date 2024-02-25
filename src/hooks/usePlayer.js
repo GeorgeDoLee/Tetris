@@ -1,31 +1,33 @@
-import { useState, useCallback } from "react"
-import { randomTetramino } from "../utilities/Tetraminoes"
+import { useState, useCallback } from "react";
+import { randomTetromino } from "../utilities/Tetrominoes";
 
 const buildPlayer = (previous) => {
-    let tetraminoes;
+  let tetrominoes;
 
-    if(previous){
-        tetraminoes = [...previous.tetraminoes];
-        tetraminoes.unshift(randomTetramino());
-    } else {
-        tetraminoes = Array(5).fill(0).map((_) => randomTetramino())
-    }
+  if (previous) {
+    tetrominoes = [...previous.tetrominoes];
+    tetrominoes.unshift(randomTetromino());
+  } else {
+    tetrominoes = Array(5)
+      .fill(0)
+      .map((_) => randomTetromino());
+  }
 
-    return {
-        collided: false,
-        isFastDropping: false,
-        position: {row: 0, colums: 4},
-        tetraminoes,
-        tetramino: tetraminoes.pop()
-    };
+  return {
+    collided: false,
+    isFastDropping: false,
+    position: { row: 0, column: 4 },
+    tetrominoes,
+    tetromino: tetrominoes.pop()
+  };
 };
 
 export const usePlayer = () => {
-    const [player, setPlayer] = useState(buildPlayer());
+  const [player, setPlayer] = useState(buildPlayer());
 
-    const resetPlayer = useCallback(() => {
-        setPlayer((prev) => buildPlayer(prev));
-    }, []);
+  const resetPlayer = useCallback(() => {
+    setPlayer((prev) => buildPlayer(prev));
+  }, []);
 
-    return [player, setPlayer, resetPlayer];
-}
+  return [player, setPlayer, resetPlayer];
+};
