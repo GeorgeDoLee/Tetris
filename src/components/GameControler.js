@@ -14,9 +14,6 @@ const GameControler = ({board, gameStats, player, setGameOver, setPlayer}) => {
 
     const onKeyUp = ({ code }) => {
         const action = actionForKey(code);
-        if(action === Action.Quit){
-            setGameOver(true);
-        }
         if(actionIsDrop(action)) resumeDropTime();
     };
 
@@ -29,7 +26,7 @@ const GameControler = ({board, gameStats, player, setGameOver, setPlayer}) => {
             } else {
                 resumeDropTime();
             }
-        } else if(action === Action.Quit){
+        } else if(action === Action.Escape){
             setGameOver(true);
         } else {
             if(actionIsDrop(action)) pauseDropTime();

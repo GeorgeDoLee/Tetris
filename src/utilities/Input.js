@@ -14,12 +14,14 @@ export const Key = {
     ArrowDown: Action.SlowDrop,
     ArrowLeft: Action.Left,
     ArrowRight: Action.Right,
-    KeyF: Action.Quit,
     KeyP: Action.Pause,
-    Space: Action.FastDrop
+    Space: Action.FastDrop,
+    Escape: Action.Escape,
 };
 
-export const actionForKey = (keyCode) => Key[keyCode];
+export const actionForKey = (keyCode) => {
+    return  Key[keyCode];
+}
 
 export const actionIsDrop = (action) =>
   [Action.SlowDrop, Action.FastDrop].includes(action);
