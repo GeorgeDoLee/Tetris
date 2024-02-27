@@ -16,7 +16,7 @@ const Preview = ({ tetromino }) => {
   });
 
   return (
-    <div className="w-20 h-20 rounded-lg bg-dun">
+    <div className="w-16 h-16 rounded-lg sm:w-20 sm:h-20 bg-dun">
       <div className={`w-full h-full grid grid-cols-4 grid-rows-4 p-2 gap-[1px]`}>
         {board.rows.map((row, y) =>
           row.map((cell, x) => (

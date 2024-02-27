@@ -5,18 +5,18 @@ const GameStats = ({ gameStats }) => {
   const linesToLevel = linesPerLevel - linesCompleted;
 
   return (
-    <ul className="flex flex-col gap-2 text-anti-flash">
+    <ul className="flex flex-row gap-4 sm:gap-2 sm:flex-col text-anti-flash">
       <div>
-        <li>Level</li>
-        <li className="text-4xl">{level}</li>
+        <li className="text-sm sm:text-lg">Level</li>
+        <li className="text-xl sm:text-4xl">{level}</li>
       </div>
       <div>
-        <li>Lines to level</li>
-        <li className="text-4xl">{linesToLevel}</li>    
+        <li className="text-sm sm:text-lg">Lines to level</li>
+        <li className="text-xl sm:text-4xl">{linesToLevel}</li>    
       </div>
       <div>
-        <li>Points</li>
-        <li className="text-4xl">{points}</li>
+        <li className="text-sm sm:text-lg">Points</li>
+        <li className="text-xl sm:text-4xl">{points}</li>
       </div>
     </ul>
   );
